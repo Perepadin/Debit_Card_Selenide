@@ -1,1 +1,1 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/iy19l9a0ajmrhkq7?svg=true)](https://ci.appveyor.com/project/Perepadin/api-ci-appveyor)
+[![Build status](https://ci.appveyor.com/api/projects/status/xxlp8tsicsx892bc?svg=true)](https://ci.appveyor.com/project/Perepadin/debit-card-selenide)
