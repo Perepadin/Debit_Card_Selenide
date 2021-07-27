@@ -11,7 +11,7 @@ public class DebitCardTest {
 
     @Test
     void shouldTestPassed() {
-        open("http://localhost:7777");
+        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
