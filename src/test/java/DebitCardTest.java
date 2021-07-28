@@ -1,4 +1,5 @@
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
@@ -9,9 +10,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DebitCardTest {
 
+    @BeforeEach
+    public void openChrome() {
+        open("http://localhost:9999");
+    }
+
+
     @Test
     void shouldTestPassedV1() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
@@ -22,7 +28,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestPassedV2() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь-Русский");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
@@ -33,7 +38,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestFieldNameFailedWithEnglish() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Ivan");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
@@ -44,7 +48,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestFieldNameFailed() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван 12");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
@@ -55,7 +58,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestFieldNameEmpty() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
@@ -66,7 +68,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestFieldPhoneFailed() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь");
         form.$("[data-test-id=phone] input").setValue("+7927000000");
@@ -77,7 +78,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestFieldPhoneEmpty() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь");
         form.$("[data-test-id=phone] input").setValue("5");
@@ -88,7 +88,6 @@ public class DebitCardTest {
 
     @Test
     void shouldTestNoClickAgreement() {
-        open("http://localhost:9999");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь");
         form.$("[data-test-id=phone] input").setValue("+79270000001");
